@@ -57,7 +57,14 @@ const create_task = async (req, res, next) => {
         })
     }
 }
+
+const findTask=async(req,res)=>{
+    const task=await Task.find()
+    return res.status(200).send({
+        task
+    })
+}
 module.exports={
-    getTaskofuser,create_task
+    getTaskofuser,create_task,findTask
 
 }
